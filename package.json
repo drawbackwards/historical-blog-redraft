@@ -1,0 +1,22 @@
+{
+  "name": "db-website",
+  "version": "1.0.0",
+  "description": "Drawbackwards Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://local_proxy@127.0.0.1:48006/git/mwsidler/db-website"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.78.0",
+    "googleapis": "^171.4.0",
+    "mammoth": "^1.11.0",
+    "pdf-parse": "^2.4.5"
+  }
+}
