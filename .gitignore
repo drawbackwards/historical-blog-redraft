@@ -1,0 +1,17 @@
+# Credentials & secrets
+redrafted-blogs-35a05540d4ad.json
+
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Misc
+.DS_Store
