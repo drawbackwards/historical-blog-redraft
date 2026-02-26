@@ -1,7 +1,9 @@
 import { google } from "googleapis";
 import Anthropic from "@anthropic-ai/sdk";
 import mammoth from "mammoth";
-import pdfParse from "pdf-parse";
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+const pdfParse = require("pdf-parse");
 import fs from "fs/promises";
 import path from "path";
 import { Readable } from "stream";
