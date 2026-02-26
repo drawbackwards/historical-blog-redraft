@@ -1,0 +1,12 @@
+{
+  "name": "db-website",
+  "version": "1.0.0",
+  "description": "Drawbackwards Website",
+  "type": "module",
+  "scripts": {
+    "redraft-blogs": "node scripts/redraft-blogs.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0"
+  }
+}
