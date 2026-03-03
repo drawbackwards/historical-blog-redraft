@@ -1,2 +1,2 @@
 # historicial-blog-redraft
-Drawbackwards historicial blog posts redrafted for AEO
+Drawbackwards historical blog posts redrafted for AEO
