@@ -1,2 +1,2 @@
-# db-website
-Drawbackwards Website
+# historicial-blog-redraft
+Drawbackwards historicial blog posts redrafted for AEO
