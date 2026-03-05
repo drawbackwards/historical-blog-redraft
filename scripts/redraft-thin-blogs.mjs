@@ -9,7 +9,7 @@ import { Readable } from "stream";
 // ── Config ────────────────────────────────────────────────────────────────────
 const FOLDER_ID        = "11p6yreT-oRKeDKZzpf2xCq6l0Fstu0kx";
 const OUTPUT_FOLDER_ID = "1tb5IStkDLbGksx0Cip5MtW92obFshcwH";
-const KEY_FILE         = "/Users/michaelsidler/Sites/db-historical-blog-redraft/redrafted-blogs-35a05540d4ad.json";
+const KEY_FILE         = "/Users/michaelsidler/Sites/db-historical-blog-redraft/redrafted-blogs-e64a8b003ede.json";
 const CONTENT_DIR      = "../content/blog";
 const MODEL            = "claude-sonnet-4-6";
 

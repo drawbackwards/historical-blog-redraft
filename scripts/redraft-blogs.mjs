@@ -9,7 +9,7 @@ import { Readable } from "stream";
 // ── Config ────────────────────────────────────────────────────────────────────
 const FOLDER_ID        = "11p6yreT-oRKeDKZzpf2xCq6l0Fstu0kx"; // Google Drive input folder
 const OUTPUT_FOLDER_ID = "1tb5IStkDLbGksx0Cip5MtW92obFshcwH"; // Google Drive output folder
-const KEY_FILE         = "/Users/michaelsidler/Sites/db-website/redrafted-blogs-35a05540d4ad.json"; // service account key
+const KEY_FILE         = "/Users/michaelsidler/Sites/db-website/redrafted-blogs-e64a8b003ede.json"; // service account key
 const OUTPUT_DIR       = "./content/blog"; // local Next.js blog content folder
 const MODEL            = "claude-sonnet-4-6";
 
