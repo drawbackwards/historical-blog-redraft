@@ -1,0 +1,293 @@
+
+Fixing blog posts in: ../content/blog
+
+  Fixing metaDescription (147 chars): 2015.07-leveraging-the-power-of-time-in-ux-design.md
+    147 -> 155 chars
+Skipping (thin/empty): 2016.02-collaborative-ux-design-for-the-enterprise.md (16 words)
+  Fixing metaDescription (141 chars): 2016.03-design-decisions-vs-shiny-objects.md
+    Warning: Claude returned 140 chars: "Learn how to separate smart design decisions from shiny objects that distract you from strategy, design principles, and real business goals."
+Skipping (thin/empty): 2016.04-finding-the-heart-of-ux-problems.md (28 words)
+  Fixing metaDescription (132 chars): 2016.06-the-formula-for-usability-testing-part-1.md
+    Warning: Claude returned 136 chars: "Learn what usability testing is, why it matters, and when to run it. Real examples show how testing saves time, money, and your product."
+  Fixing metaDescription (146 chars): 2016.07-the-formula-for-usability-testing-part-2.md
+    Warning: Claude returned 147 chars: "Learn how to run usability testing that actually works, from screening participants to the best practices our UX agency has refined over the years."
+Skipping (thin/empty): 2016.10-ux-rings-a-ux-survey-and-system-for-measuring-experience-success.md (0 words)
+Skipping (thin/empty): 2016.11-the-wrong-and-right-way-to-build-an-mvp.md (19 words)
+  Fixing metaDescription (124 chars): 2017.01-3-ux-design-predictions-for-2017.md
+    Error fixing meta for 2017.01-3-ux-design-predictions-for-2017.md: Connection error.
+Skipping (thin/empty): 2017.02-curing-the-pains-of-health-ux.md (14 words)
+  Fixing metaDescription (142 chars): 2017.03-should-you-build-an-in-house-ux-team-or-partner-with-a-ux-agency.md
+    Error fixing meta for 2017.03-should-you-build-an-in-house-ux-team-or-partner-with-a-ux-agency.md: Connection error.
+Skipping (thin/empty): 2017.04a-the-power-of-storytelling-in-brand-strategy.md (18 words)
+Skipping (thin/empty): 2017.04b-collecting-user-feedback-and-the-power-of-jobs-to-be-done.md (35 words)
+  Fixing metaDescription (149 chars): 2017.05-throw-some-ux-on-it-rookie-mistake-executives-make.md
+    Error fixing meta for 2017.05-throw-some-ux-on-it-rookie-mistake-executives-make.md: Connection error.
+Skipping (thin/empty): 2017.06-"a-primer-on-ux-prototyping-part-1-the-perks-of-prototypes".md (19 words)
+  Fixing metaDescription (119 chars): 2017.07-"ux-prototyping-part-2-the-3-kinds-of-prototypes".md
+    Error fixing meta for 2017.07-"ux-prototyping-part-2-the-3-kinds-of-prototypes".md: Connection error.
+Skipping (thin/empty): 2017.09-optimizing-the-customer-journey-with-ux-design-and-content-strategy.md (22 words)
+Skipping (thin/empty): 2017.10-starting-with-content-strategy-the-key-to-a-successful-content-marketing-plan.md (0 words)
+  Fixing metaDescription (149 chars): 2017.12-the-drawbackwards-design-thinking-process.md
+    Error fixing meta for 2017.12-the-drawbackwards-design-thinking-process.md: Connection error.
+  Fixing metaDescription (142 chars): 2018.01-3-ux-design-predictions-for-2018.md
+    Error fixing meta for 2018.01-3-ux-design-predictions-for-2018.md: Connection error.
+  Fixing metaDescription (138 chars): 2018.02-empathy-exercises-for-winning-customers-and-avoiding-losses.md
+    Error fixing meta for 2018.02-empathy-exercises-for-winning-customers-and-avoiding-losses.md: Connection error.
+  Fixed 1 em dash(es): 2018.03-quarantining-complexity-with-strategic-ux-design-and-development.md
+  Fixing metaDescription (143 chars): 2018.03-quarantining-complexity-with-strategic-ux-design-and-development.md
+    Error fixing meta for 2018.03-quarantining-complexity-with-strategic-ux-design-and-development.md: Connection error.
+  Fixing metaDescription (140 chars): 2018.05-is-your-sales-software-broken-or-is-it-your-processes.md
+    Error fixing meta for 2018.05-is-your-sales-software-broken-or-is-it-your-processes.md: Connection error.
+  Fixing metaDescription (161 chars): 2018.06-how-to-develop-your-design-philosophy.md
+    Error fixing meta for 2018.06-how-to-develop-your-design-philosophy.md: Connection error.
+  Fixing metaDescription (139 chars): 2018.07-the-12-competencies-of-ux-design.md
+    Error fixing meta for 2018.07-the-12-competencies-of-ux-design.md: Connection error.
+  Fixed 9 em dash(es): 2018.09-12-competencies-of-ux-design-no-2-creating-a-vision-of-the-desired-outcome.md
+  Fixing metaDescription (134 chars): 2018.09-12-competencies-of-ux-design-no-2-creating-a-vision-of-the-desired-outcome.md
+    Error fixing meta for 2018.09-12-competencies-of-ux-design-no-2-creating-a-vision-of-the-desired-outcome.md: Connection error.
+  Fixing metaDescription (144 chars): 2018.10-"12-competencies-of-ux-design-no-3-understanding-your-audience-through-empathy-and-research".md
+    Error fixing meta for 2018.10-"12-competencies-of-ux-design-no-3-understanding-your-audience-through-empathy-and-research".md: Connection error.
+Skipping (thin/empty): 2018.11-"12-competencies-of-ux-design-no-4-measuring-audience-experience-success".md (29 words)
+Skipping (thin/empty): 2018.12-"12-competencies-of-ux-design-no-5-reducing-friction-with-context-structure-and-flow".md (93 words)
+Skipping (thin/empty): 2019.01-"12-competencies-of-ux-design-no-6-the-art-of-interaction-design".md (20 words)
+  Fixing metaDescription (145 chars): 2019.02-"12-competencies-of-ux-design-no-7-interface-design-and-prototyping".md
+    Error fixing meta for 2019.02-"12-competencies-of-ux-design-no-7-interface-design-and-prototyping".md: Connection error.
+Skipping (thin/empty): 2019.03-"12-competencies-of-ux-design-no-8-writing-for-meaningful-experiences".md (119 words)
+Skipping (thin/empty): 2019.04-"12-competencies-of-ux-design-no-9-infusing-assistance-and-intelligence".md (0 words)
+Skipping (thin/empty): 2019.05-12-competencies-of-ux-design-no-10-championing-the-value-of-ux.md (18 words)
+Skipping (thin/empty): 2019.06-"12-competencies-of-ux-design-no-11-collaborating-and-critiquing-for-growth".md (0 words)
+Skipping (thin/empty): 2019.07-12-competencies-of-ux-design-no-12-leadership-and-maturity.md (18 words)
+  Fixed 1 em dash(es): 2019.10-the-7-cx-dimensions.md
+  Fixing metaDescription (148 chars): 2019.10-the-7-cx-dimensions.md
+    Error fixing meta for 2019.10-the-7-cx-dimensions.md: Connection error.
+  Fixing metaDescription (143 chars): 2019.11a-the-art-of-building-a-strong-ux-team-culture.md
+    Error fixing meta for 2019.11a-the-art-of-building-a-strong-ux-team-culture.md: Connection error.
+  Fixing metaDescription (132 chars): 2019.11b-"ux-giving-the-tools-techniques-and-processes-were-most-thankful-for".md
+    Error fixing meta for 2019.11b-"ux-giving-the-tools-techniques-and-processes-were-most-thankful-for".md: Connection error.
+Skipping (thin/empty): 2020.02a-meaningful-music-spotifys-next-level-ux.md (20 words)
+  Fixing metaDescription (135 chars): 2020.02b-tetris-for-ux-team-building-and-efficiency.md
+    Error fixing meta for 2020.02b-tetris-for-ux-team-building-and-efficiency.md: Connection error.
+  Fixing metaDescription (147 chars): 2020.02c-effective-ux-prototyping-de-risks-product-innovation.md
+    Error fixing meta for 2020.02c-effective-ux-prototyping-de-risks-product-innovation.md: Connection error.
+  Fixed 2 em dash(es): 2020.03a-what-do-users-expect-from-free-trial-ux.md
+  Fixing metaDescription (141 chars): 2020.03a-what-do-users-expect-from-free-trial-ux.md
+    Error fixing meta for 2020.03a-what-do-users-expect-from-free-trial-ux.md: Connection error.
+  Fixed 1 em dash(es): 2020.03b-how-do-you-build-a-remote-ux-team.md
+  Fixing metaDescription (149 chars): 2020.03b-how-do-you-build-a-remote-ux-team.md
+    Error fixing meta for 2020.03b-how-do-you-build-a-remote-ux-team.md: Connection error.
+  Fixing metaDescription (144 chars): 2020.03c-how-to-leverage-the-roi-of-ux-in-uncertain-times.md
+    Error fixing meta for 2020.03c-how-to-leverage-the-roi-of-ux-in-uncertain-times.md: Connection error.
+  Fixing metaDescription (142 chars): 2020.04a-how-to-use-design-thinking-to-create-confidence-in-times-of-chaos.md
+    Error fixing meta for 2020.04a-how-to-use-design-thinking-to-create-confidence-in-times-of-chaos.md: Connection error.
+  Fixing metaDescription (145 chars): 2020.04b-how-to-calculate-the-roi-of-ux.md
+    Error fixing meta for 2020.04b-how-to-calculate-the-roi-of-ux.md: Connection error.
+  Fixing metaDescription (143 chars): 2020.05-four-common-ux-needs-and-six-ways-to-solve-them.md
+    Error fixing meta for 2020.05-four-common-ux-needs-and-six-ways-to-solve-them.md: Connection error.
+  Fixed 1 em dash(es): 2020.06-why-hire-a-design-team-for-ongoing-support.md
+  Fixing metaDescription (149 chars): 2020.06-why-hire-a-design-team-for-ongoing-support.md
+    Error fixing meta for 2020.06-why-hire-a-design-team-for-ongoing-support.md: Connection error.
+  Fixing metaDescription (141 chars): 2020.07-how-to-really-train-a-ux-team.md
+    Error fixing meta for 2020.07-how-to-really-train-a-ux-team.md: Connection error.
+  Fixed 1 em dash(es): 2020.08-how-to-train-and-develop-the-12-competencies-of-ux-design.md
+  Fixing metaDescription (136 chars): 2020.08-how-to-train-and-develop-the-12-competencies-of-ux-design.md
+    Error fixing meta for 2020.08-how-to-train-and-develop-the-12-competencies-of-ux-design.md: Connection error.
+  Fixing metaDescription (148 chars): 2020.09-draw-backwards-to-drive-forward-the-secret-of-our-success.md
+    Error fixing meta for 2020.09-draw-backwards-to-drive-forward-the-secret-of-our-success.md: Connection error.
+  Fixing metaDescription (137 chars): 2020.10-why-you-need-a-strong-design-system-and-how-to-build-one.md
+    Error fixing meta for 2020.10-why-you-need-a-strong-design-system-and-how-to-build-one.md: Connection error.
+Skipping (thin/empty): 2020.11-the-design-handoff-how-a-component-library-can-make-your-design-system-stronger.md (5 words)
+Skipping (thin/empty): 2020.12-3-tips-for-better-remote-work-in-2021.md (143 words)
+  Fixing metaDescription (146 chars): 2021.01-to-improve-your-product-treat-the-root-cause-not-the-symptoms.md
+    Error fixing meta for 2021.01-to-improve-your-product-treat-the-root-cause-not-the-symptoms.md: Connection error.
+  Fixing metaDescription (144 chars): 2021.02a-how-do-you-boost-user-engagement.md
+    Error fixing meta for 2021.02a-how-do-you-boost-user-engagement.md: Connection error.
+  Fixing metaDescription (141 chars): 2021.02b-how-to-boost-user-engagement-anticipate-user-needs.md
+    141 -> 150 chars
+  Fixing metaDescription (145 chars): 2021.02c-how-to-boost-user-engagement-prioritize-jobs-to-be-done.md
+    Warning: Claude returned 145 chars: "Want to boost user engagement? Learn how a Jobs-To-Be-Done focus helps product teams cut through the noise and give users exactly what they need."
+  Fixing metaDescription (136 chars): 2021.02d-how-to-boost-user-engagement-provide-the-right-context.md
+    Warning: Claude returned 143 chars: "Learn how to boost user engagement by providing contextual messaging that meets users where they are and helps them get their jobs done faster."
+Skipping (thin/empty): 2021.03a-framing-ux-problems-how-to-reframe-your-problems-to-find-the-right-solutions.md (0 words)
+  Fixing metaDescription (147 chars): 2021.03b-problem-framing-identify-the-obstacles-in-your-way.md
+    147 -> 151 chars
+  Fixing metaDescription (134 chars): 2021.03c-"problem-framing-gain-a-new-perspective".md
+    Warning: Claude returned 143 chars: "Learn how the Powers of Ten technique helps teams reframe UX problems, unlock creative solutions, and gain a new perspective by shifting scale."
+  Fixing metaDescription (129 chars): 2021.03d-"problem-framing-re-map-your-users-journey".md
+    129 -> 152 chars
+  Fixing metaDescription (144 chars): 2021.04a-why-listen-to-the-voice-of-the-customer.md
+    Warning: Claude returned 149 chars: "Discover why a Voice of the Customer program matters, how CX maturity drives business growth, and how to start listening to your customers every day."
+    Accepting near-match at 149 chars
+    144 -> 149 chars
+  Fixing metaDescription (140 chars): 2021.04b-what-is-customer-experience-really.md
+    Warning: Claude returned 149 chars: "What is customer experience, really? Discover the 3 core components, 7 dimensions of CX success, and why it matters more than brand reputation alone."
+    Accepting near-match at 149 chars
+    140 -> 149 chars
+Skipping (thin/empty): 2021.04c-the-5-keys-to-building-a-strong-voice-of-the-customer-voc-program.md (137 words)
+  Fixing metaDescription (145 chars): 2021.04d-how-to-know-if-your-voice-of-the-customer-program-is-working.md
+    145 -> 150 chars
+  Fixed 1 em dash(es): 2021.05a-the-best-ux-training-builds-a-long-term-ux-mindset.md
+  Fixing metaDescription (144 chars): 2021.05a-the-best-ux-training-builds-a-long-term-ux-mindset.md
+    Warning: Claude returned 147 chars: "The best UX training programs do more than teach tools. They build a lasting UX mindset. Here are the 4 key elements to look for when choosing one."
+Skipping (thin/empty): 2021.05b-ux-training-how-to-set-your-ux-team-up-for-success.md (0 words)
+  Fixing metaDescription (147 chars): 2021.05c-ux-certifications-and-bootcamps-are-they-worth-it.md
+    147 -> 152 chars
+  Fixing metaDescription (142 chars): 2021.05d-ux-mentorship-the-role-of-ux-audits-and-design-reviews.md
+    142 -> 152 chars
+  Fixed 2 em dash(es): 2021.06a-3-very-human-reasons-software-projects-fail.md
+  Fixing metaDescription (147 chars): 2021.06a-3-very-human-reasons-software-projects-fail.md
+    Warning: Claude returned 147 chars: "Software projects fail for very human reasons. Learn the 3 core causes behind software project failures: empathy, planning, and communication gaps."
+  Fixing metaDescription (142 chars): 2021.07a-what-is-product-thinking-and-why-does-it-matter.md
+    142 -> 152 chars
+  Fixing metaDescription (148 chars): 2021.07b-product-thinking-identifying-the-user-and-their-problem-to-be-solved.md
+    Warning: Claude returned 148 chars: "Learn what product thinking is and why identifying the right user and problem is the foundation of any successful product. A guide by Drawbackwards."
+    Accepting near-match at 148 chars
+  Fixing metaDescription (145 chars): 2021.07c-what-is-product-thinking-and-why-does-it-matter.md
+    Warning: Claude returned 148 chars: "Product thinking helps UX teams identify the core problem users need to solve. Learn what it is, why it matters, and how to start applying it today."
+    Accepting near-match at 148 chars
+    145 -> 148 chars
+  Fixing metaDescription (140 chars): 2021.07d-what-is-product-thinking-and-why-does-it-matter-identifying-your-desired-outcomes.md
+    Warning: Claude returned 142 chars: "Learn what product thinking is and why it matters, and how identifying desired outcomes and success metrics helps you build the right product."
+  Fixing metaDescription (136 chars): 2021.08a-why-do-ux-research.md
+    Warning: Claude returned 149 chars: "Most teams think they know what users need, but assumptions can be costly. Here's why UX research matters and the three real reasons to invest in it."
+    Accepting near-match at 149 chars
+    136 -> 149 chars
+Skipping (thin/empty): 2021.08b-how-to-do-ux-research-the-right-way.md (0 words)
+Skipping (thin/empty): 2021.09a-healthcare-ux-4-common-problems-with-patient-portals.md (52 words)
+Skipping (thin/empty): 2021.09b-"healthcare-ux-4-ways-to-prevent-your-patient-portal-from-becoming-a-vortex".md (0 words)
+Skipping (thin/empty): 2021.12-"2022-the-year-of-digital-identity".md (142 words)
+  Fixing metaDescription (134 chars): 2022.01-fixing-the-ux-of-covid-19.md
+    Warning: Claude returned 136 chars: "Covid-19 exposed a hard truth: bad UX in public health is not just an inconvenience. Here's what went wrong and how we fix it next time."
+Skipping (thin/empty): 2022.04-when-and-how-to-not-listen-to-your-users.md (0 words)
+  Fixing metaDescription (144 chars): 2022.05-how-heuristic-evaluations-fit-into-your-ux-strategy.md
+    144 -> 150 chars
+  Fixed 1 em dash(es): 2022.06-the-true-value-of-ux-maturity.md
+  Fixing metaDescription (146 chars): 2022.06-the-true-value-of-ux-maturity.md
+    146 -> 151 chars
+  Fixing metaDescription (145 chars): 2022.07-good-user-experience-is-central-to-product-led-growth.md
+    145 -> 151 chars
+  Fixing metaDescription (149 chars): 2022.08-measure-ux-success-and-build-better-products-with-the-drawbackwards-ladder.md
+    Warning: Claude returned 147 chars: "Learn how the Drawbackwards Ladder helps you measure UX success by blending quantitative data with qualitative feedback across five key dimensions."
+  Fixing metaDescription (130 chars): 2022.10-designops-the-invisible-problem-haunting-your-digital-products.md
+    Warning: Claude returned 145 chars: "DesignOps is the missing piece in most digital product strategies. Learn what it is, why it matters, and how to start building it at scale today."
+  Fixed 1 em dash(es): 2022.12-ux-design-year-in-review-what-we-learned-and-confirmed-in-2022.md
+  Fixing metaDescription (147 chars): 2023.01-how-back-end-development-can-make-or-break-your-ux.md
+    Warning: Claude returned 148 chars: "Back-end development can make or break your UX. Learn how performance, reliability, and security decisions directly shape the experience users have."
+    Accepting near-match at 148 chars
+    147 -> 148 chars
+  Fixing metaDescription (136 chars): 2023.02-how-to-turn-your-great-idea-into-a-successful-new-software-product.md
+    Warning: Claude returned 149 chars: "Learn how to turn a software product idea into a market-ready success with clear vision, user-centered design, and a smart MVP strategy you can test."
+    Accepting near-match at 149 chars
+    136 -> 149 chars
+  Fixed 2 em dash(es): 2023.03-how-to-craft-meaningful-seamless-digital-experiences-across-an-expanding-product-portfolio.md
+  Fixed 1 em dash(es): 2023.04-ai-is-transforming-ux-design-whether-we-like-it-or-not.md
+Skipping (thin/empty): 2023.05-how-to-harness-the-power-of-10x-developers-for-100x-productivity.md (81 words)
+  Fixing metaDescription (144 chars): 2023.06-building-a-successful-mvp-the-drawbackwards-way.md
+    144 -> 150 chars
+Skipping (thin/empty): 2023.07-how-to-power-up-your-mvp.md (111 words)
+  Fixed 2 em dash(es): 2023.08-what-can-go-wrong-when-you-stop-listening-to-users-and-customers.md
+  Fixing metaDescription (146 chars): 2023.08-what-can-go-wrong-when-you-stop-listening-to-users-and-customers.md
+    Warning: Claude returned 144 chars: "Discover what goes wrong when you stop listening to users and customers, from poor UX to missed market opportunities, and how to stay connected."
+Skipping (thin/empty): 2023.09-how-a-ux-agency-can-help-you-chart-a-course-for-product-success.md (0 words)
+  Fixing metaDescription (139 chars): 2023.11-combating-user-churn-why-user-retention-matters.md
+    Warning: Claude returned 147 chars: "User retention makes or breaks software products. Learn why 77% of users leave within 3 days and what you must do to combat user churn effectively."
+  Fixing metaDescription (134 chars): 2023.12-"combating-user-churn-why-user-abandonment-happens".md
+    Warning: Claude returned 145 chars: "User abandonment happens when products stop serving their users. Learn the core reasons why users churn and what your team can do to fix it fast."
+Skipping (thin/empty): 2024.01-"combating-user-churn-how-to-improve-user-retention-and-reduce-user-abandonment".md (150 words)
+Skipping (thin/empty): 2024.02-enterprise-digital-transformation-starts-here.md (14 words)
+Skipping (thin/empty): 2024.03-how-to-use-ux-to-get-the-most-out-of-your-erp-solution.md (27 words)
+Skipping (thin/empty): 2024.05-mastering-the-art-of-cross-platform-design-navigating-complexity-for-seamless-user-experiences.md (151 words)
+  Fixing metaDescription (144 chars): 2024.07-transform-your-ux-with-ladder-the-ai-powered-insight-tool-from-drawbackwards.md
+    144 -> 150 chars
+  Fixing metaDescription (141 chars): 2024.08-elevate-your-ux-by-digging-beyond-analytics-to-truly-understand-your-users-and-employees.md
+    Warning: Claude returned 137 chars: "User analytics only tell part of the story. Learn how to go beyond surface metrics to truly understand user behavior and elevate your UX."
+Skipping (thin/empty): 2024.09-data-visualization-is-the-key-to-maximizing-the-value-of-your-ai-agent.md (18 words)
+Skipping (thin/empty): 2024.10-scaling-personalization-without-sacrificing-ux.md (196 words)
+Skipping (thin/empty): 2024.11-how-a-high-performing-experience-design-team-can-drive-massive-roi-for-high-growth-companies.md (15 words)
+  Fixing metaDescription (133 chars): 2024.12-ux-meets-branding-how-great-user-experiences-build-stronger-brands.md
+    Warning: Claude returned 144 chars: "Learn how great UX design shapes brand perception and loyalty, with real examples from Chipotle, Nike, and DoorDash to help guide your strategy."
+Skipping (thin/empty): 2025.01-when-less-is-more-how-over-engineering-can-hurt-your-software-and-your-brand.md (97 words)
+Skipping (thin/empty): 2025.02-from-task-simplicity-to-deep-thinking-the-evolution-of-ui-in-an-ai-world.md (22 words)
+  Fixed 15 em dash(es): 2025.03-if-you-think-ai-designs-ux-youre-looking-at-it-all-wrong.md
+  Fixing metaDescription (138 chars): 2025.03-if-you-think-ai-designs-ux-youre-looking-at-it-all-wrong.md
+    138 -> 152 chars
+  Fixed 14 em dash(es): 2025.05-personalized-ux-how-to-design-software-that-feels-like-it-knows-you.md
+  Fixing metaDescription (148 chars): 2025.05-personalized-ux-how-to-design-software-that-feels-like-it-knows-you.md
+    148 -> 155 chars
+  Fixed 1 em dash(es): 2025.06-how-to-help-your-software-product-team-collaborate-for-success.md
+  Fixing metaDescription (149 chars): 2025.07-"ux-debt-the-silent-killer-of-product-momentum".md
+    149 -> 150 chars
+Skipping (thin/empty): 2025.08-thoughtful-ux-design-missing-link-ai-assisted-decision-making.md (16 words)
+Skipping (thin/empty): 2025.09-the-future-of-product-design-how-ai-is-driving-a-shift-from-features-to-outcomes.md (0 words)
+Skipping (thin/empty): 2025.10-the-good-the-bad-and-the-baffling-odd-ux-we-ve-seen-in-the-wild.md (0 words)
+  Fixed 1 em dash(es): 2025.11-from-features-to-outcomes-how-to-design-what-really-matters.md
+  Fixing metaDescription (164 chars): 2025.11-from-features-to-outcomes-how-to-design-what-really-matters.md
+    Warning: Claude returned 138 chars: "Discover how outcome-first product design beats feature-first thinking, leading to better products, cleaner roadmaps, and real user value."
+  Fixed 2 em dash(es): 2025.12-your-product-is-a-living-thing.md
+  Fixing metaDescription (146 chars): 2025.12-your-product-is-a-living-thing.md
+    Warning: Claude returned 144 chars: "Your digital product is never truly finished. Learn why treating it as a living thing, not a one-time build, is key to long-term product growth."
+  Fixing metaDescription (129 chars): 2026.01-designing-the-next-interface-where-ui-ux-and-ai-are-headed-in-2026.md
+    Warning: Claude returned 140 chars: "AI is reshaping UI/UX design in 2026. Learn how product teams can design for trust, clarity, and real outcomes in an AI-powered world today."
+  Fixing metaDescription (146 chars): 2026.02-the-true-impact-of-ux-on-your-business.md
+    Warning: Claude returned 145 chars: "Learn how UX design drives real business growth. Companies that invest in user experience see 2x better performance. Discover the true ROI of UX."
+
+── Summary ───────────────────────────────────────
+Em dashes fixed:           19
+metaDescriptions fixed:    22
+metaDescriptions skipped:  22 (Claude out of range)
+No meta field found:       0
+Thin/empty posts skipped:  44
+Errors:                    32
+Files unchanged:           66
+
+── Posts needing re-run through redraft-blogs.mjs ─
+  2016.02-collaborative-ux-design-for-the-enterprise.md
+  2016.04-finding-the-heart-of-ux-problems.md
+  2016.10-ux-rings-a-ux-survey-and-system-for-measuring-experience-success.md
+  2016.11-the-wrong-and-right-way-to-build-an-mvp.md
+  2017.02-curing-the-pains-of-health-ux.md
+  2017.04a-the-power-of-storytelling-in-brand-strategy.md
+  2017.04b-collecting-user-feedback-and-the-power-of-jobs-to-be-done.md
+  2017.06-"a-primer-on-ux-prototyping-part-1-the-perks-of-prototypes".md
+  2017.09-optimizing-the-customer-journey-with-ux-design-and-content-strategy.md
+  2017.10-starting-with-content-strategy-the-key-to-a-successful-content-marketing-plan.md
+  2018.11-"12-competencies-of-ux-design-no-4-measuring-audience-experience-success".md
+  2018.12-"12-competencies-of-ux-design-no-5-reducing-friction-with-context-structure-and-flow".md
+  2019.01-"12-competencies-of-ux-design-no-6-the-art-of-interaction-design".md
+  2019.03-"12-competencies-of-ux-design-no-8-writing-for-meaningful-experiences".md
+  2019.04-"12-competencies-of-ux-design-no-9-infusing-assistance-and-intelligence".md
+  2019.05-12-competencies-of-ux-design-no-10-championing-the-value-of-ux.md
+  2019.06-"12-competencies-of-ux-design-no-11-collaborating-and-critiquing-for-growth".md
+  2019.07-12-competencies-of-ux-design-no-12-leadership-and-maturity.md
+  2020.02a-meaningful-music-spotifys-next-level-ux.md
+  2020.11-the-design-handoff-how-a-component-library-can-make-your-design-system-stronger.md
+  2020.12-3-tips-for-better-remote-work-in-2021.md
+  2021.03a-framing-ux-problems-how-to-reframe-your-problems-to-find-the-right-solutions.md
+  2021.04c-the-5-keys-to-building-a-strong-voice-of-the-customer-voc-program.md
+  2021.05b-ux-training-how-to-set-your-ux-team-up-for-success.md
+  2021.08b-how-to-do-ux-research-the-right-way.md
+  2021.09a-healthcare-ux-4-common-problems-with-patient-portals.md
+  2021.09b-"healthcare-ux-4-ways-to-prevent-your-patient-portal-from-becoming-a-vortex".md
+  2021.12-"2022-the-year-of-digital-identity".md
+  2022.04-when-and-how-to-not-listen-to-your-users.md
+  2023.05-how-to-harness-the-power-of-10x-developers-for-100x-productivity.md
+  2023.07-how-to-power-up-your-mvp.md
+  2023.09-how-a-ux-agency-can-help-you-chart-a-course-for-product-success.md
+  2024.01-"combating-user-churn-how-to-improve-user-retention-and-reduce-user-abandonment".md
+  2024.02-enterprise-digital-transformation-starts-here.md
+  2024.03-how-to-use-ux-to-get-the-most-out-of-your-erp-solution.md
+  2024.05-mastering-the-art-of-cross-platform-design-navigating-complexity-for-seamless-user-experiences.md
+  2024.09-data-visualization-is-the-key-to-maximizing-the-value-of-your-ai-agent.md
+  2024.10-scaling-personalization-without-sacrificing-ux.md
+  2024.11-how-a-high-performing-experience-design-team-can-drive-massive-roi-for-high-growth-companies.md
+  2025.01-when-less-is-more-how-over-engineering-can-hurt-your-software-and-your-brand.md
+  2025.02-from-task-simplicity-to-deep-thinking-the-evolution-of-ui-in-an-ai-world.md
+  2025.08-thoughtful-ux-design-missing-link-ai-assisted-decision-making.md
+  2025.09-the-future-of-product-design-how-ai-is-driving-a-shift-from-features-to-outcomes.md
+  2025.10-the-good-the-bad-and-the-baffling-odd-ux-we-ve-seen-in-the-wild.md
+
+Total needing re-run: 44
+Tip: These files have frontmatter and ASCII art but no body content.
+     Check they exist in your Drive input folder and re-run the redraft script.
+
+Done. Re-run verify-blogs.mjs to confirm remaining issues.
+

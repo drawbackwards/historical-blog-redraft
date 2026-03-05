@@ -7,11 +7,14 @@ import path from "path";
 import { Readable } from "stream";
 
 // ── Config ────────────────────────────────────────────────────────────────────
-const FOLDER_ID        = "11p6yreT-oRKeDKZzpf2xCq6l0Fstu0kx"; // Google Drive input folder
-const OUTPUT_FOLDER_ID = "1tb5IStkDLbGksx0Cip5MtW92obFshcwH"; // Google Drive output folder
-const KEY_FILE         = "/Users/michaelsidler/Sites/db-website/redrafted-blogs-35a05540d4ad.json"; // service account key
-const OUTPUT_DIR       = "./content/blog"; // local Next.js blog content folder
+const FOLDER_ID        = "11p6yreT-oRKeDKZzpf2xCq6l0Fstu0kx";
+const OUTPUT_FOLDER_ID = "1tb5IStkDLbGksx0Cip5MtW92obFshcwH";
+const KEY_FILE         = "/Users/michaelsidler/Sites/db-historical-blog-redraft/redrafted-blogs-35a05540d4ad.json";
+const CONTENT_DIR      = "../content/blog";
 const MODEL            = "claude-sonnet-4-6";
+
+// Posts below this word count are considered thin and will be redrafted
+const THIN_THRESHOLD   = 200;
 
 const REDRAFT_PROMPT = `I am uploading a blog post from our company. Please redraft this blog post to optimize it for Answer Engine Optimization (AEO) while preserving the original tone, voice, and brand personality exactly as written.
 
@@ -40,19 +43,12 @@ When redrafting, please apply the following:
 1. Aim to match the original post length unless content can be tightened without losing value
 2. Never pad content to hit a word count — every sentence should earn its place
 
-## Blog Header Image
-1. We will need a 16x9 blog header image that is a good representation of the blog content
-2. It needs to be created as ASCII art
-3. The site uses a dark theme by default, so the ASCII art should display as white text on the web
-4. When the user switches to light mode, the ASCII art should switch to black text to remain visible against the light background
-5. When the post is printed or saved to a PDF, the ASCII art should also render in black text so it is legible on a white page
-
 ## Output
 1. Never use em-dashes in any of your output
-2. Don't use horizontal lines to break sections. Just a normal return will do
-3. Format the entire output as Markdown
-4. Include a frontmatter block at the top with the following fields: title, date, metaDescription, and slug. The slug should be a lowercase, hyphenated version of the title. The metaDescription should be 150-160 characters and include the primary keyword
-5. Provide the full redrafted blog post, ready to publish
+2. Do not use horizontal lines to break sections
+3. Format the output as Markdown body content only -- no frontmatter, no style blocks, no pre tags, no ASCII art
+4. Output only the blog post body starting from the first heading or opening paragraph
+5. Do not include any preamble, commentary, or closing notes
 
 Here is the blog post content:`;
 
@@ -65,11 +61,10 @@ async function getDriveClient() {
   return google.drive({ version: "v3", auth });
 }
 
-// ── List files in input folder ────────────────────────────────────────────────
-async function listFiles(drive) {
+// ── List all source files in input folder ─────────────────────────────────────
+async function listSourceFiles(drive) {
   let allFiles = [];
   let pageToken = null;
-
   do {
     const res = await drive.files.list({
       q: `'${FOLDER_ID}' in parents and trashed = false`,
@@ -77,38 +72,17 @@ async function listFiles(drive) {
       supportsAllDrives: true,
       includeItemsFromAllDrives: true,
       pageSize: 1000,
-      pageToken: pageToken,
+      pageToken,
     });
     allFiles = allFiles.concat(res.data.files);
     pageToken = res.data.nextPageToken;
   } while (pageToken);
-
-  console.log(`Total files found in folder: ${allFiles.length}`);
 
   return allFiles.filter(f =>
     f.mimeType === "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ||
     f.mimeType === "application/pdf" ||
     f.mimeType === "application/vnd.google-apps.document"
   );
-}
-
-async function getCompletedFiles(drive) {
-  let allFiles = [];
-  let pageToken = null;
-  do {
-    const res = await drive.files.list({
-      q: `'${OUTPUT_FOLDER_ID}' in parents and trashed = false`,
-      fields: "nextPageToken, files(name)",
-      supportsAllDrives: true,
-      includeItemsFromAllDrives: true,
-      pageSize: 1000,
-      pageToken: pageToken,
-    });
-    allFiles = allFiles.concat(res.data.files);
-    pageToken = res.data.nextPageToken;
-  } while (pageToken);
-  console.log(`Already completed: ${allFiles.length} file(s)`);
-  return new Set(allFiles.map(f => f.name.replace(".md", "")));
 }
 
 // ── Download file to buffer ───────────────────────────────────────────────────
@@ -127,7 +101,7 @@ async function downloadFile(drive, file) {
   return { buffer: Buffer.from(res.data), mimeType: file.mimeType };
 }
 
-// ── Extract text from file buffer ─────────────────────────────────────────────
+// ── Extract text from buffer ──────────────────────────────────────────────────
 async function extractText({ buffer, mimeType }) {
   if (mimeType === "application/vnd.openxmlformats-officedocument.wordprocessingml.document") {
     const result = await mammoth.extractRawText({ buffer });
@@ -146,33 +120,39 @@ async function extractText({ buffer, mimeType }) {
   throw new Error(`Unsupported file type: ${mimeType}`);
 }
 
-// ── Call Claude to redraft ────────────────────────────────────────────────────
-async function redraftPost(client, text) {
+// ── Call Claude for body-only redraft ─────────────────────────────────────────
+async function redraftBody(client, sourceText) {
   const msg = await client.messages.create({
     model: MODEL,
     max_tokens: 4096,
     messages: [
-      { role: "user", content: `${REDRAFT_PROMPT}\n\n${text}` }
+      { role: "user", content: `${REDRAFT_PROMPT}\n\n${sourceText}` }
     ],
   });
-  return msg.content[0].text;
+  return msg.content[0].text.trim();
 }
 
-// ── Extract slug from frontmatter ─────────────────────────────────────────────
-function extractSlug(markdown, fallback) {
-  const match = markdown.match(/^slug:\s*(.+)$/m);
-  return match ? match[1].trim() : fallback;
+// ── Extract the preserved header (frontmatter + style + pre block) ────────────
+function extractHeader(markdown) {
+  // Grab everything up to and including the closing </pre> tag
+  const preEnd = markdown.indexOf("</pre>");
+  if (preEnd === -1) return null;
+  return markdown.slice(0, preEnd + 6); // include </pre>
 }
 
-// ── Save output locally to Next.js content folder ────────────────────────────
-async function saveLocally(markdown, slug) {
-  await fs.mkdir(OUTPUT_DIR, { recursive: true });
-  const filePath = path.join(OUTPUT_DIR, `${slug}.md`);
-  await fs.writeFile(filePath, markdown, "utf8");
-  console.log(`  Saved locally: ${filePath}`);
+// ── Word count helper ─────────────────────────────────────────────────────────
+function wordCount(text) {
+  return text.split(/\s+/).filter(Boolean).length;
 }
 
-// ── Upload output to Google Drive output folder ───────────────────────────────
+// ── Derive a loose match key from a filename (date prefix only) ───────────────
+// e.g. "2022.04-when-and-how..." -> "2022.04"
+function datePrefix(filename) {
+  const m = filename.match(/^(\d{4}\.\d{2}[a-z]?)/i);
+  return m ? m[1] : null;
+}
+
+// ── Upload updated file to Drive output folder ────────────────────────────────
 async function uploadToDrive(drive, filename, content) {
   const stream = Readable.from([content]);
   await drive.files.create({
@@ -181,54 +161,102 @@ async function uploadToDrive(drive, filename, content) {
       mimeType: "text/markdown",
       parents: [OUTPUT_FOLDER_ID],
     },
-    media: {
-      mimeType: "text/markdown",
-      body: stream,
-    },
+    media: { mimeType: "text/markdown", body: stream },
     supportsAllDrives: true,
   });
-  console.log(`  Uploaded to Drive: ${filename}`);
 }
 
 // ── Main ──────────────────────────────────────────────────────────────────────
 async function main() {
-  const drive = await getDriveClient();
+  const drive     = await getDriveClient();
   const anthropic = new Anthropic();
 
-  console.log("Fetching files from Google Drive...");
-  const files = await listFiles(drive);
-  const completed = await getCompletedFiles(drive);
+  // Step 1: find all local .md files that are thin/empty
+  console.log("Scanning local blog files for thin/empty posts...\n");
+  const localFiles = (await fs.readdir(CONTENT_DIR))
+    .filter(f => f.endsWith(".md"))
+    .map(f => path.join(CONTENT_DIR, f));
 
-  if (files.length === 0) {
-    console.log("No supported files found in folder.");
+  const thinFiles = [];
+  for (const filePath of localFiles) {
+    const markdown = await fs.readFile(filePath, "utf8");
+    // Strip frontmatter + ASCII block to get body
+    let body = markdown.replace(/^---[\s\S]*?---\n/, "");
+    body = body.replace(/<style>[\s\S]*?<\/style>\s*<pre[^>]*>[\s\S]*?<\/pre>/, "");
+    body = body.replace(/<[^>]+>/g, "").trim();
+    if (wordCount(body) < THIN_THRESHOLD) {
+      thinFiles.push({ filePath, filename: path.basename(filePath), markdown });
+    }
+  }
+
+  if (thinFiles.length === 0) {
+    console.log("No thin/empty posts found. Nothing to do.");
     return;
   }
 
-  console.log(`Found ${files.length} file(s). Starting redraft...\n`);
+  console.log(`Found ${thinFiles.length} thin/empty post(s) to redraft.\n`);
 
-  for (const file of files) {
-    const fallbackSlug = file.name.toLowerCase().replace(/\s+/g, "-").replace(/\.[^.]+$/, "");
-    const datePrefix = file.name.match(/^(\d{4}\.\d{2}[a-z]?)/i)?.[1] || "";
-    if (datePrefix && [...completed].some(name => name.startsWith(datePrefix))) {
-      console.log(`Skipping (already done): ${file.name}`);
+  // Step 2: load all source files from Drive once
+  console.log("Fetching source file list from Google Drive...");
+  const sourceFiles = await listSourceFiles(drive);
+  console.log(`Found ${sourceFiles.length} source file(s) in Drive.\n`);
+
+  // Step 3: process each thin file
+  let done = 0, skipped = 0, errors = 0;
+
+  for (const { filePath, filename, markdown } of thinFiles) {
+    const prefix = datePrefix(filename);
+
+    // Match Drive source file by date prefix
+    const match = sourceFiles.find(f => {
+      const srcPrefix = datePrefix(f.name.replace(/\s+/g, "-").toLowerCase());
+      return srcPrefix && prefix && srcPrefix === prefix;
+    });
+
+    if (!match) {
+      console.log(`No Drive source found for: ${filename} (prefix: ${prefix})`);
+      skipped++;
       continue;
     }
-    console.log(`Processing: ${file.name}`);
+
+    console.log(`Processing: ${filename}`);
+    console.log(`  Matched source: ${match.name}`);
+
     try {
-      const downloaded = await downloadFile(drive, file);
-      const text = await extractText(downloaded);
-      const redrafted = await redraftPost(anthropic, text);
-      const slug = extractSlug(redrafted, fallbackSlug);
-      const datedSlug = datePrefix ? `${datePrefix}-${slug}` : slug;
-      await saveLocally(redrafted, datedSlug);
-      await uploadToDrive(drive, `${datedSlug}.md`, redrafted);
-      console.log(`  Done: ${file.name}\n`);
+      // Download and extract original text from Drive
+      const downloaded  = await downloadFile(drive, match);
+      const sourceText  = await extractText(downloaded);
+
+      // Redraft body only
+      const newBody = await redraftBody(anthropic, sourceText);
+
+      // Preserve the existing header (frontmatter + style + ASCII art)
+      const header = extractHeader(markdown);
+      if (!header) throw new Error("Could not extract header block from local file");
+
+      // Splice together: preserved header + blank line + new body
+      const updatedMarkdown = `${header}\n\n${newBody}\n`;
+
+      // Save locally
+      await fs.writeFile(filePath, updatedMarkdown, "utf8");
+      console.log(`  Saved locally: ${filename}`);
+
+      // Update Drive output folder (overwrite by uploading with same name)
+      await uploadToDrive(drive, filename, updatedMarkdown);
+      console.log(`  Uploaded to Drive: ${filename}\n`);
+
+      done++;
     } catch (err) {
-      console.error(`  Error processing ${file.name}:`, err.message);
+      console.error(`  Error processing ${filename}:`, err.message);
+      errors++;
     }
   }
 
-  console.log("All done. Check your content/blog folder and Google Drive output folder.");
+  console.log(`── Done ─────────────────────────────────────────`);
+  console.log(`Redrafted:        ${done}`);
+  console.log(`No source found:  ${skipped}`);
+  console.log(`Errors:           ${errors}`);
+  console.log(`\nRun verify-blogs.mjs to confirm all posts are now clean.\n`);
 }
 
 main();
